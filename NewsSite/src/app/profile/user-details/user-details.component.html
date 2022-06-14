@@ -1,0 +1,53 @@
+<ng-template appPlaceholder></ng-template>
+<form class="mx-5 mt-3 d-flex flex-column" #userdetailsform="ngForm"
+      enctype="multipart/form-data" (ngSubmit)="changeDetials(userdetailsform)">
+  <mat-form-field appearance="legacy" >
+    <mat-label>Email</mat-label>
+    <input matInput type="email" placeholder="Email" [ngModel]="data['email']" name="email"  required email readonly>
+    <mat-error>{{userdetailsform.form.controls['email']==undefined || userdetailsform.form.controls['email'].value.length != 0 ? "Proper " : ""}}Email id is required to login</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <mat-label>{{"user name" | titlecase}}</mat-label>
+    <input matInput placeholder="user name" [autocomplete]="false" [(ngModel)]="data['username']" name="username" required>
+    <mat-error>should not be empty</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy" class="tilewidth pe-2">
+    <mat-label>{{"first name" | titlecase}}</mat-label>
+    <input matInput placeholder="first name" name="firstname" [(ngModel)]="data['firstname']" required>
+    <mat-error>should not be empty</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy" class="tilewidth">
+    <mat-label>{{"last name" | titlecase}}</mat-label>
+    <input matInput placeholder="last name" name="lastname" [(ngModel)]="data['lastname']" required>
+    <mat-error>should not be empty</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy" class="tilewidth pe-2">
+    <mat-label>{{"phone number" | titlecase}}</mat-label>
+    <input matInput type="number" placeholder="phone number" [(ngModel)]="data['phonenumber']" name="phonenumber" required>
+    <mat-error>{{userdetailsform.form.controls['phonenumber'] && userdetailsform.form.controls['phonenumber'].value.length<=10
+      ?userdetailsform.form.controls['phonenumber'].value.length==10 ? "" :"phonw number should be 10 digit long" :"should not be empty"}}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy" class="tilewidth">
+    <mat-label>Date of Birth</mat-label>
+    <input matInput [matDatepicker]="datepicker" name="dateOfBirth" [(ngModel)]="data['dateOfBirth']" required>
+    <mat-hint>should be in mm/dd/yyyy format</mat-hint>
+    <mat-error>data format should be proper</mat-error>
+    <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+    <mat-datepicker #datepicker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field appearance="legacy" class="tilewidth pe-2">
+    <mat-select placeholder="Gender" [(ngModel)]="data['gender']" [name]="'gender'" required>
+      <mat-option [value]="'male'">Male</mat-option>
+      <mat-option [value]="'female'">Female</mat-option>
+      <mat-option [value]="'na'">Not Prefered</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="legacy" class="tilewidth">
+    <mat-label>{{"nation" | titlecase}}</mat-label>
+    <input matInput placeholder="nation" [(ngModel)]="data['nation']" name="nation" required appCountryValidator>
+    <mat-error>needed a valid country string like india is represented as in</mat-error>
+  </mat-form-field>
+  <div class="py-sm-2">
+  <button class="btn btn-primary" formenctype="multipart/form-data" type="submit" [disabled]="!userdetailsform.form.dirty">Update</button>
+  </div>
+</form>

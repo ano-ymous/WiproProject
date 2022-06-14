@@ -1,0 +1,23 @@
+.link{
+  box-shadow: none;
+}
+.dropdown-menu>li>a{
+  padding-left: 1em;
+  padding-right: 0;
+  text-decoration: none;
+  color: black;
+}
+.center{
+  justify-content: center;
+}
+.noeffects:focus{
+  box-shadow: none;
+}
+.width{
+
+}
+@media screen and (max-width: 599px) {
+  .width{
+    width: 100%;
+  }
+}

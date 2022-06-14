@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark px-0 sticky-top">
+  <div class="container-fluid d-flex flex-sm-row flex-column text-center px-1">
+    <div class="d-flex flex-row justify-content-between justify-content-sm-between width">
+      <a class="navbar-brand center m-0" routerLink="">NewsApp</a>
+      <button class="btn btn-dark noeffects" [fxShow]="true" fxHide.gt-xs="true" type="button" (click)="isMenuCollapsed=!isMenuCollapsed">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div  class="collapse navbar-collapse navbar-header d-flex flex-sm-row flex-column text-center" id="togglenavbar">
+      <ul class="navbar-nav d-flex flex-sm-row flex-column text-sm-center mx-1">
+        <li class="nav-item mx-1">
+          <a class="nav-link" routerLink="/user/home" [fxHide.lt-sm]="isMenuCollapsed" (click)="isMenuCollapsed = true">Home</a>
+        </li>
+        <li class="nav-item mx-1">
+          <a class="nav-link" routerLink="/user/favorite" [fxHide.lt-sm]="isMenuCollapsed"  (click)="isMenuCollapsed = true">Favorite</a>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-footer d-flex flex-column flex-sm-row">
+      <form class="form d-flex flex-column flex-sm-row mr-1" #form = 'ngForm' (ngSubmit)="submit(form)" >
+        <input class="form-control mr-2" placeholder="search" type="text" name="search" ngModel required [fxHide.lt-sm]="isMenuCollapsed" >
+        <button class="btn btn-outline-light form-inline-control me-1" type="submit" [fxHide.lt-sm]="isMenuCollapsed" (click)="isMenuCollapsed = true" >Search</button>
+      </form>
+      <ul class="nav justify-content-center" [fxHide.lt-sm]="isMenuCollapsed" >
+        <div class="dropdown">
+          <button
+            class="btn btn-outline-light dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Manage
+          </button>
+          <div class="dropdown-menu dropdown-menu-end text-center px-1 py-0" aria-labelledby="dropdownMenuButton1">
+            <h3 class="dropdown-header m-0">{{username}}</h3>
+            <button class="dropdown-item text-center px-0" [routerLink]="'/profile'" (click)="isMenuCollapsed = true">Profile</button>
+            <button class="dropdown-item text-center px-0" [routerLink]="'/profile/changepassword'" (click)="isMenuCollapsed = true">Change Password</button>
+            <hr class="dropdown-divider m-1">
+            <button mat-menu-item class="dropdown-item text-center px-0" routerLink="/logout">Logout</button>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+

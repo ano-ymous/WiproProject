@@ -1,0 +1,7 @@
+<div class="d-flex flex-row justify-content-end">
+  <div class="container-fluid size position shape decor d-flex flex-row justify-content-between"
+       [style]="{'--color' : color}">
+    <p>{{ data | alertNullRectifier }}</p>
+    <span class="cross" style="font-weight: bold" (click)="closeMethod()" >&times;</span>
+  </div>
+</div>

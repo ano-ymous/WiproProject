@@ -1,0 +1,80 @@
+<ng-template appPlaceholder></ng-template>
+<div class="container">
+  <h2>Let's sign up</h2>
+  <form class="mx-5" #signupform="ngForm" enctype="multipart/form-data" (ngSubmit)="signUp(signupform)">
+    <div class="d-flex flex-column">
+      <mat-form-field appearance="legacy">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Email" ngModel name="email" required email>
+        <mat-error>{{signupform.form.controls['email']==undefined || signupform.form.controls['email'].value.length != 0 ? "Proper " : ""}}Email id is required to login</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>{{"user name" | titlecase}}</mat-label>
+        <input matInput placeholder="user name" [autocomplete]="false" ngModel name="username" required>
+        <mat-error>should not be empty</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="d-flex flex-column flex-sm-row justify-content-between">
+      <mat-form-field appearance="legacy" class="tilewidth pe-2">
+        <mat-label>{{"password" | titlecase}}</mat-label>
+        <input matInput type="password" [autocomplete]="false"
+               placeholder="password" ngModel name="password" required pattern="^((?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[$@$!%*#?&]))[A-Za-z\d$@$!%*#?&]{8,}$">
+        <mat-error>required a valid password</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="legacy" class="tilewidth">
+        <mat-label>{{"confirm password" | titlecase}}</mat-label>
+        <input matInput type="password" [autocomplete]="false" placeholder="password" ngModel name="confirmpassword" required appPasswordValidator
+               [password]="signupform.form.controls['password']!=undefined ? signupform.form.controls['password'].value : ''">
+        <mat-error>should be same as password</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="d-flex flex-column flex-sm-row justify-content-between">
+      <mat-form-field appearance="legacy" class="tilewidth pe-2">
+        <mat-label>{{"first name" | titlecase}}</mat-label>
+        <input matInput placeholder="first name" ngModel name="firstname" required>
+        <mat-error>should not be empty</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="legacy" class="tilewidth">
+        <mat-label>{{"last name" | titlecase}}</mat-label>
+        <input matInput placeholder="last name" ngModel name="lastname" required>
+        <mat-error>should not be empty</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="d-flex flex-column flex-sm-row justify-content-between">
+      <mat-form-field appearance="legacy" class="tilewidth pe-2">
+        <mat-label>{{"phone number" | titlecase}}</mat-label>
+        <input matInput type="number" placeholder="phone number" ngModel name="phonenumber" required>
+        <mat-error>{{signupform.form.controls['phonenumber'] && signupform.form.controls['phonenumber'].value.length<=10 ?signupform.form.controls['phonenumber'].value.length==10 ? "" :"phonw number should be 10 digit long" :"should not be empty"}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="legacy" class="tilewidth">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="datepicker" name="dob" ngModel required>
+        <mat-hint>should be in mm/dd/yyyy format</mat-hint>
+        <mat-error>data format should be proper</mat-error>
+        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="d-flex flex-column flex-sm-row justify-content-between">
+      <mat-form-field appearance="legacy" class="tilewidth pe-2">
+        <mat-select placeholder="Gender" ngModel [name]="'gender'" required>
+        <mat-option [value]="'male'">Male</mat-option>
+        <mat-option [value]="'female'">Female</mat-option>
+        <mat-option [value]="'na'">Not Prefered</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="legacy" class="tilewidth">
+        <mat-label>{{"nation" | titlecase}}</mat-label>
+        <input matInput placeholder="nation" ngModel name="nation" required appCountryValidator>
+        <mat-error>needed a valid country string like india is represented as in</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="d-flex flex-column pb-1 ">
+      <mat-checkbox ngModel name="termsandcondition" required>Accept terms and condition</mat-checkbox>
+    </div>
+    <div class="d-flex flex-row py-2">
+      <button class="btn btn-primary" formenctype="multipart/form-data" type="submit">Save</button>
+      <a class="nodecoration align-self-end ps-1 " [routerLink]="'/login'">already a user</a>
+    </div>
+  </form>
+</div>

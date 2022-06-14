@@ -1,0 +1,39 @@
+.size{
+  width: 100%;
+  min-height: 100%;
+  z-index: 50;
+}
+.transparent-color{
+  background-color: rgba(180,180,180,50%);
+}
+.card-size{
+  width: 40%;
+  min-height: 30%;
+  max-height: 40%;
+  z-index: 60;
+}
+.position{
+  margin: 10% 30%;
+}
+.card-color{
+  background-color: white;
+}
+
+.nolink{
+  text-decoration: none;
+  color: black;
+}
+.pos{
+  position: fixed;
+  top: 0;
+}
+@media screen and (max-width: 700px) {
+  .card-size{
+    width: 90vw;
+    max-height: 90vh;
+    z-index: 60;
+  }
+  .position{
+    margin: 10% 5%;
+  }
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="eurekaService"/>
+<aop-project name="newsApiGatewaySecurity"/>
+<aop-project name="newsFetchService"/>
+<aop-project name="userService"/>
+<aop-project name="favoritesService"/>
+</aop-reference-model>

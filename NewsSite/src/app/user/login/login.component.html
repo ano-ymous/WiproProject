@@ -1,0 +1,27 @@
+<ng-template appPlaceholder ></ng-template>
+<div class="container d-flex justify-content-center pt-5">
+  <div class="form-control container-size container-pos d-flex flex-column justify-content-center anim">
+    <h2 class="d-flex justify-content-center pt-2 mb-0" >News App</h2>
+    <form [style.fontSize.px]="16" class="d-flex flex-column form-size p-2"
+          #loginForm = "ngForm" (ngSubmit)="validateCredentials(loginForm)">
+      <mat-form-field appearance="legacy">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" ngModel name="email" required email>
+        <mat-error>{{loginForm.form.controls['email']==undefined || loginForm.form.controls['email'].value.length != 0 ? "Proper " : ""}}Email id is required to login</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="password" [autocomplete]="false" ngModel name="password"required>
+        <mat-hint ><a class="nodecoration" [routerLink]="'./'">forgot password</a></mat-hint>
+      </mat-form-field><br>
+      <div class="d-flex flex-row">
+        <button type="submit" class="btn btn-primary noshadow"
+                [disabled]="loginForm.form.controls['email']==undefined ||
+                loginForm.form.controls['password']==undefined ||
+                loginForm.form.controls['email'].invalid ||
+                loginForm.form.controls['password'].invalid" >Login</button>
+        <a class="align-self-end ps-1 nodecoration" routerLink="/signup">new user</a>
+      </div>
+    </form>
+  </div>
+</div>

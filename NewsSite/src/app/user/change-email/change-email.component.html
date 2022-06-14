@@ -1,0 +1,36 @@
+<form class="mx-0 mx-sm-5 mt-4 d-flex flex-column" #changeemailform="ngForm" enctype="multipart/form-data"
+      (ngSubmit)="changeEmail(changeemailform)">
+  <mat-form-field appearance="legacy">
+    <mat-label>Old Email</mat-label>
+    <input matInput type="email" placeholder="New Email" ngModel name="email" required email>
+    <mat-error>{{changeemailform.form.controls['email']==undefined ||
+    changeemailform.form.controls['email'].value.length != 0 ? "Proper " : ""}}
+      Email id is required to login</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <mat-label>New Email</mat-label>
+    <input matInput type="email" placeholder="Email" ngModel name="newemail" required email
+           [autocomplete]="false">
+    <mat-error>{{changeemailform.form.controls['newemail']==undefined ||
+    changeemailform.form.controls['newemail'].value.length != 0 ? "Proper " : ""}}
+      Email id is required to login</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <mat-label>Confirm Email</mat-label>
+    <input matInput type="email" placeholder="Confirm Email" ngModel name="confirmemail" required email
+    [autocomplete]="false">
+    <mat-error>{{ changeemailform.form.controls['newemail']==undefined ||
+    changeemailform.form.controls['confirmemail']==undefined ||
+    changeemailform.form.controls['confirmemail'] ===
+    changeemailform.form.controls['newemail'] ? "Please enter same " : ""}}
+      Email id is required to login</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy" class="tilewidth pe-2">
+    <mat-label>{{"password" | titlecase}}</mat-label>
+    <input matInput type="password" [autocomplete]="false"
+           placeholder="password" ngModel name="password" required>
+  </mat-form-field>
+  <div class="py-2">
+    <button class="btn btn-primary" formenctype="multipart/form-data" [disabled]="!changeemailform.valid" type="submit">Change Email</button>
+  </div>
+</form>

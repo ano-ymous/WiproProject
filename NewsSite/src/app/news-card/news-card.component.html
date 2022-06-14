@@ -1,0 +1,30 @@
+<div class="container-fluid card-size m-0 rounded-1 py-1 ps-0 pe-1">
+  <div class="card card-front anim">
+    <div class=" position-absolute p-2 " (click)="toggleFav()" style="z-index: 3;">
+      <i class="fa fa-heart" style="font-size: 18px"
+         [style]="{color: isFav ? 'red' : isFront ? 'white' : 'black'}" >
+      </i>
+    </div>
+    <div *ngIf="isFront then front else back">
+    </div>
+  </div>
+  <ng-template #front>
+    <div class="card-body p-0">
+      <img class="img-size rounded-top" src="{{data.urlToImage}}">
+    </div>
+    <div class="card-footer py-0 ps-1 pe-1">
+      <p class="text-overflow">{{data.title}}</p>
+    </div>
+    <a class="stretched-link" (click)="isFront=!isFront"></a>
+  </ng-template>
+  <ng-template #back>
+    <div class="card-body " style="transform: rotate(0deg)">
+      <p class="indent overflow-back">{{data.description}}</p>
+      <a class="stretched-link" (click)="isFront=!isFront"></a>
+    </div>
+    <div class="card-footer d-flex flex-row justify-content-between py-0 ps-1 pe-1">
+      <a class="text-black text-decoration-none" (click)="fullviewCreater()">full article</a>
+      <p class="">-{{data.author}}</p>
+    </div>
+  </ng-template>
+</div>

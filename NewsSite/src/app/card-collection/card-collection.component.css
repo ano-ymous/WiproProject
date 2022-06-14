@@ -1,0 +1,12 @@
+.scroll::-webkit-scrollbar{
+  display: none;
+}
+
+.view{
+  max-height: 78vh;
+  overflow-y: scroll;
+}
+
+.overflow{
+  overflow-x: scroll;
+}

@@ -1,0 +1,15 @@
+.nodecoration{
+  text-decoration: none;
+  color: black;
+}
+.tilewidth{
+  width: 50%;
+}
+.btn:focus{
+  box-shadow: none;
+}
+@media screen and (max-width: 575px) {
+  .tilewidth{
+    width: 100%;
+  }
+}

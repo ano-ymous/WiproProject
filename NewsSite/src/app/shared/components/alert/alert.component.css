@@ -1,0 +1,36 @@
+.size{
+  width: 40%;
+}
+.position{
+  position: fixed;
+  top: 10vh;
+  right: 2vw;
+  z-index: 1500;
+}
+.shape{
+  border-radius: 5px;
+}
+.decor{
+  --color : gray;
+  background-color: var(--color);
+  box-shadow: 0 0 7px var(--color);
+  color: white;
+  opacity: 80%;
+}
+.cross{
+  size: 15px;
+  cursor: pointer;
+}
+.cross:hover{
+  text-shadow: 2px 2px 9px black;
+}
+@media screen and (max-width: 550px) {
+  .size{
+    width: 100%;
+  }
+  .position{
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+}

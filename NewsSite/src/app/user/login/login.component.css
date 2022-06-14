@@ -1,0 +1,61 @@
+.form-size{
+  width: 90%;
+}
+
+.container-size{
+  width: 40%;
+}
+
+.container-pos{
+  margin-top: 10%;
+}
+
+.disabled{
+  cursor: not-allowed;
+}
+
+.nodecoration{
+  text-decoration: none;
+  color: black;
+}
+
+.noshadow{
+  box-shadow: none;
+}
+
+.btn:focus{
+  box-shadow: none;
+}
+.btn-outline-light:active{
+  border-color: transparent;
+}
+
+.anim{
+  animation-name: shadow-reverse;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+.anim:hover{
+  animation-name: shadow;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+.btn:focus{
+  box-shadow: none;
+}
+
+@keyframes shadow {
+  0% {   box-shadow: -0.3px -0.3px 1px grey}
+  100% { box-shadow: 3px 3px 6px grey}
+}
+@keyframes shadow-reverse {
+  100% { box-shadow: -0.3px -0.3px 1px grey }
+  0% { box-shadow: 3px 3px 6px grey}
+}
+
+@media screen and (max-width: 767px) {
+  .container-size{
+    width: 90%;
+  }
+}

@@ -1,0 +1,16 @@
+<!--suppress ALL, XmlHighlighting -->lHighlighting -->
+
+<div class="size transparent-color pos" (click)="close()">
+  <div class="card card-size position card-color">
+    <div class="card-header d-flex flex-row justify-content-between px-1">
+      <h3 class="mb-0">{{header}}</h3>
+      <a class="nolink" (click)="close()" [routerLink]="'./'" class="mb-0">&times;</a>
+    </div>
+    <div class="card-body">
+      <p>{{content}}</p>
+    </div>
+    <div class="card-footer">
+      <a class="nolink" [href]="url" target="_blank">click here to read full article</a>
+    </div>
+  </div>
+</div>
