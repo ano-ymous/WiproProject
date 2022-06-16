@@ -41,6 +41,11 @@
   animation-duration: 1s;
 }
 
+.nolink{
+  text-decoration: none;
+  color: black;
+}
+
 .btn:focus{
   box-shadow: none;
 }

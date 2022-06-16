@@ -17,14 +17,26 @@
     <div class="d-flex flex-column flex-sm-row justify-content-between">
       <mat-form-field appearance="legacy" class="tilewidth pe-2">
         <mat-label>{{"password" | titlecase}}</mat-label>
-        <input matInput type="password" [autocomplete]="false"
+        <div class="d-flex flex-row">
+        <input matInput [type]="!visible ? 'password' : 'text'" [autocomplete]="false"
                placeholder="password" ngModel name="password" required pattern="^((?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[$@$!%*#?&]))[A-Za-z\d$@$!%*#?&]{8,}$">
+        <a routerLink="./" (click)="visible=!visible" style="z-index: 5;">
+          <span class="material-symbols-sharp nolink " *ngIf="!visible" >visibility</span>
+          <span class="material-symbols-sharp nolink" *ngIf="visible" >visibility_off</span>
+        </a>
+        </div>
         <mat-error>required a valid password</mat-error>
       </mat-form-field>
       <mat-form-field appearance="legacy" class="tilewidth">
         <mat-label>{{"confirm password" | titlecase}}</mat-label>
-        <input matInput type="password" [autocomplete]="false" placeholder="password" ngModel name="confirmpassword" required appPasswordValidator
-               [password]="signupform.form.controls['password']!=undefined ? signupform.form.controls['password'].value : ''">
+        <div class="d-flex flex-row">
+          <input matInput [type]="!visibleC ? 'password':'text'" [autocomplete]="false" placeholder="password" ngModel name="confirmpassword" required appPasswordValidator
+                 [password]="signupform.form.controls['password']!=undefined ? signupform.form.controls['password'].value : ''">
+          <a routerLink="./" (click)="visibleC=!visibleC" style="z-index: 5;">
+            <span class="material-symbols-sharp nolink " *ngIf="!visibleC" >visibility</span>
+            <span class="material-symbols-sharp nolink" *ngIf="visibleC" >visibility_off</span>
+          </a>
+        </div>
         <mat-error>should be same as password</mat-error>
       </mat-form-field>
     </div>
@@ -43,7 +55,7 @@
     <div class="d-flex flex-column flex-sm-row justify-content-between">
       <mat-form-field appearance="legacy" class="tilewidth pe-2">
         <mat-label>{{"phone number" | titlecase}}</mat-label>
-        <input matInput type="number" placeholder="phone number" ngModel name="phonenumber" required appPhoneNumberChecker>
+        <input class="phonenumber" matInput type="number" placeholder="phone number" ngModel name="phonenumber" required appPhoneNumberChecker>
         <mat-error>phone number should be 10 digit long</mat-error>
       </mat-form-field>
       <mat-form-field appearance="legacy" class="tilewidth">

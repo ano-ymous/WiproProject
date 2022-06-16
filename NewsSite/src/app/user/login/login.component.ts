@@ -16,6 +16,7 @@ import {AlertModel} from "../../shared/components/alert/alert.model";
 export class LoginComponent implements OnInit {
   username !:string;
   @ViewChild(PlaceholderDirective,{static:true}) host!: PlaceholderDirective;
+  visible:boolean = false;
   constructor(private login:AuthService,
               private router: Router,
               private auth:LoginAuthenticationGuard,

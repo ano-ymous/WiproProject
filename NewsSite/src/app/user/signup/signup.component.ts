@@ -13,7 +13,9 @@ import {Router} from "@angular/router";
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  visible:boolean = false;
   @ViewChild(PlaceholderDirective,{static: true}) host!: PlaceholderDirective;
+  visibleC: boolean = false;
   constructor(private signup: AuthService,
               private alert:DynamicComponentService,
               private router: Router) {

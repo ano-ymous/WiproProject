@@ -22,8 +22,14 @@
   </mat-form-field>
   <mat-form-field appearance="legacy" class="tilewidth pe-2">
     <mat-label>{{"password" | titlecase}}</mat-label>
-    <input matInput type="password" [autocomplete]="false"
-           placeholder="password" ngModel name="password" required>
+    <div class="d-flex flex-row">
+      <input matInput [type]="!visible ?'password':'text'" [autocomplete]="false"
+             placeholder="password" ngModel name="password" required>
+      <a routerLink="./" (click)="visible=!visible" style="z-index: 5;">
+        <span class="material-symbols-sharp nolink " *ngIf="!visible" >visibility</span>
+        <span class="material-symbols-sharp nolink" *ngIf="visible" >visibility_off</span>
+      </a>
+    </div>
   </mat-form-field>
   <div class="py-2">
     <button class="btn btn-primary" formenctype="multipart/form-data" [disabled]="changeemailform.invalid" type="submit">Change Email</button>

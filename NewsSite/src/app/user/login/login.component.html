@@ -11,7 +11,13 @@
       </mat-form-field>
       <mat-form-field appearance="legacy">
         <mat-label>Password</mat-label>
-        <input matInput type="password" placeholder="password" [autocomplete]="false" ngModel name="password"required>
+        <div class="d-flex flex-row">
+          <input matInput [type]="!visible ? 'password':'text'" placeholder="password" [autocomplete]="false" ngModel name="password"required>
+          <a routerLink="./" (click)="visible=!visible" style="z-index: 5;">
+            <span class="material-symbols-sharp nolink " *ngIf="!visible" >visibility</span>
+            <span class="material-symbols-sharp nolink" *ngIf="visible" >visibility_off</span>
+          </a>
+        </div>
         <mat-hint ><a class="nodecoration" [routerLink]="'./'">forgot password</a></mat-hint>
       </mat-form-field><br>
       <div class="d-flex flex-row">

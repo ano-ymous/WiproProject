@@ -15,6 +15,7 @@ export class ChangeEmailComponent implements
   OnInit,
   OnDestroy{
   private closeSub!: EventEmitter<void>;
+  visible:boolean = false;
   @ViewChild(PlaceholderDirective,{static:true}) host!:PlaceholderDirective;
   constructor(private request: RequestService,
               private router: Router,

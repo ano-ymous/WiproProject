@@ -14,8 +14,10 @@ import {DynamicComponentService} from "../../shared/services/dynamic-component.s
 export class ChangepasswordComponent implements OnInit,
 OnDestroy{
   email!:string;
+  visible:boolean = false;
   private closeSub!: EventEmitter<void>;
   @ViewChild(PlaceholderDirective,{static:true}) host!:PlaceholderDirective;
+  visibleN: boolean = false;
   constructor(private request:RequestService,
               private  alert:DynamicComponentService) { }
 

@@ -1,3 +1,7 @@
 .btn:focus{
   box-shadow:none;
 }
+.nolink{
+  text-decoration: none;
+  color: black;
+}

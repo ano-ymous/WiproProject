@@ -8,6 +8,17 @@
 .btn:focus{
   box-shadow: none;
 }
+.nolink{
+  text-decoration: none;
+  color: black;
+}
+.phonenumber{
+
+}
+.phonenumber::-webkit-scrollbar{
+  width: 0px;
+}
+
 @media screen and (max-width: 575px) {
   .tilewidth{
     width: 100%;
