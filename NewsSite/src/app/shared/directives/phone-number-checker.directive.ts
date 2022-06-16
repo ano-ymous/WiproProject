@@ -10,8 +10,8 @@ export class PhoneNumberCheckerDirective implements Validator{
   constructor() { }
 
   validate(control: AbstractControl): ValidationErrors | null {
-    if(control.value==undefined || control.value.toString().length<10)
-      return {phonenumberInvalid:true,message:"should 10 digits length"};
+    if(control.value==undefined || control.value > 10000000000 || control.value < 999999999)
+      return { phonenumberInvalid:true,message:"should be 10 digits length" };
     return null;
   }
 

@@ -44,7 +44,7 @@
       <mat-form-field appearance="legacy" class="tilewidth pe-2">
         <mat-label>{{"phone number" | titlecase}}</mat-label>
         <input matInput type="number" placeholder="phone number" ngModel name="phonenumber" required appPhoneNumberChecker>
-        <mat-error>{{signupform.form.controls['phonenumber'] && signupform.form.controls['phonenumber'].value.length<=10 ?signupform.form.controls['phonenumber'].value.length==10 ? "" :"phonw number should be 10 digit long" :"should not be empty"}}</mat-error>
+        <mat-error>phone number should be 10 digit long</mat-error>
       </mat-form-field>
       <mat-form-field appearance="legacy" class="tilewidth">
         <mat-label>Date of Birth</mat-label>
