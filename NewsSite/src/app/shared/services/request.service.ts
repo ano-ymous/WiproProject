@@ -11,6 +11,7 @@ export class RequestService {
   private baseUrl:string = "http://localhost:8084/api/v1/";
   private authKey!:string | null;
   private email !:string | null;
+  private nation!:string | null;
   constructor(private http:HttpClient,private router:Router) {
     this.getUsernameAndTokenAndEmail();
     console.log(this.username);
@@ -44,7 +45,6 @@ export class RequestService {
     return this.http.post(url,single);
   }
 
-
   getLocalStorage():string|null{
     let store:string|null = localStorage.getItem('user');
     if(store!=null) return store;
@@ -62,6 +62,10 @@ export class RequestService {
       this.getUsernameAndTokenAndEmail();
     }
     else this.router.navigate(['/login']);
+  }
+
+  getNation():string | null{
+    return this.nation;
   }
 
   getUsername():string|null{
@@ -99,6 +103,7 @@ export class RequestService {
       this.username = user['_username'];
       this.authKey  =user['_token'];
       this.email = user['email'];
+      this.nation = user['nation'];
     }
   }
   clear(){

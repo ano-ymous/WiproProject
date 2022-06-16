@@ -1,7 +1,9 @@
 import {Data} from "@angular/router";
 
 export class User{
-  constructor(private _username:string,private email:string,
+  constructor(private _username:string,
+              private email:string,
+              private nation:string,
               private _token:string,
               private _tokenExpiryDate:Date
   ) {}

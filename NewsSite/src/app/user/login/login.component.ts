@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     formData.append("email", loginForm.form.controls['email'].value.toLowerCase());
     formData.append("password", loginForm.form.controls['password'].value);
     this.login.login(formData).subscribe((response)=>{
-        const user = new User(response['username'],loginForm.form.controls['email'].value,
+        const user = new User(response['username'],loginForm.form.controls['email'].value,response['nation'],
           response['data'], response['expiryDate']);
         localStorage.setItem('user',JSON.stringify(user));
         console.log(JSON.stringify(user));

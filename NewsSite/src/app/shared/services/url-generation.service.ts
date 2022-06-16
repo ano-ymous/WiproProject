@@ -32,7 +32,7 @@ export class UrlGenerationService {
     if(['general','entertainment','business','sports','health','technology','science'].includes(key))
       url+='?category='+key;
     else if(["top today"].includes(key)){
-      url+="?nation=in";
+      url+="?nation="+this.request.getNation();
     }
     else
       url+='?keyword='+key;
