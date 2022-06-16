@@ -43,7 +43,7 @@
     <div class="d-flex flex-column flex-sm-row justify-content-between">
       <mat-form-field appearance="legacy" class="tilewidth pe-2">
         <mat-label>{{"phone number" | titlecase}}</mat-label>
-        <input matInput type="number" placeholder="phone number" ngModel name="phonenumber" required>
+        <input matInput type="number" placeholder="phone number" ngModel name="phonenumber" required appPhoneNumberChecker>
         <mat-error>{{signupform.form.controls['phonenumber'] && signupform.form.controls['phonenumber'].value.length<=10 ?signupform.form.controls['phonenumber'].value.length==10 ? "" :"phonw number should be 10 digit long" :"should not be empty"}}</mat-error>
       </mat-form-field>
       <mat-form-field appearance="legacy" class="tilewidth">
@@ -58,9 +58,9 @@
     <div class="d-flex flex-column flex-sm-row justify-content-between">
       <mat-form-field appearance="legacy" class="tilewidth pe-2">
         <mat-select placeholder="Gender" ngModel [name]="'gender'" required>
-        <mat-option [value]="'male'">Male</mat-option>
-        <mat-option [value]="'female'">Female</mat-option>
-        <mat-option [value]="'na'">Not Prefered</mat-option>
+          <mat-option [value]="'male'">Male</mat-option>
+          <mat-option [value]="'female'">Female</mat-option>
+          <mat-option [value]="'na'">Not Prefered</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field appearance="legacy" class="tilewidth">
@@ -73,7 +73,7 @@
       <mat-checkbox ngModel name="termsandcondition" required>Accept terms and condition</mat-checkbox>
     </div>
     <div class="d-flex flex-row py-2">
-      <button class="btn btn-primary" formenctype="multipart/form-data" type="submit">Save</button>
+      <button class="btn btn-primary" formenctype="multipart/form-data" type="submit" [disabled]="signupform.untouched || signupform.invalid" >Save</button>
       <a class="nodecoration align-self-end ps-1 " [routerLink]="'/login'">already a user</a>
     </div>
   </form>

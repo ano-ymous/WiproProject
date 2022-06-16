@@ -1,0 +1,43 @@
+package com.wipro.test.controllers;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Date;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+
+import com.wipro.controllers.UserController;
+import com.wipro.model.Users;
+
+@WebMvcTest(controllers = UserController.class)
+class UserControllerTest {
+	private Users user1;
+	
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterAll
+	static void tearDownAfterClass() throws Exception {
+	}
+
+	@BeforeEach
+	void setUp() throws Exception {
+		user1 = new Users("tharun","tharun kumar reddy","kunduru","tharun.kunduru@gmail.com",9494090070,new Date("2001-03-14"),"male","in");
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+	}
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

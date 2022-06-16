@@ -2,7 +2,7 @@
 <div class="container-fluid card d-flex flex-column p-0 border-bottom-0">
   <div class="card-header d-flex flex-row justify-content-between px-1 py-0 border-bottom-0" style="z-index: 0">
     <h2>{{heading}}</h2>
-    <a class="text-decoration-none text-black" [routerLink]="'./'" [queryParamsHandling]="'preserve'" [preserveFragment]="true" (click)="onSeeAllChange()">
+    <a class="text-decoration-none text-black" [routerLink]="'./'" (click)="onSeeAllChange()">
       <span *ngIf="!isFullScreen">Show All</span>
       <span *ngIf="isFullScreen">Hide</span>
     </a>

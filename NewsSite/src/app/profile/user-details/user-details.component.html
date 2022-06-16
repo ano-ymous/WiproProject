@@ -23,9 +23,8 @@
   </mat-form-field>
   <mat-form-field appearance="legacy" class="tilewidth pe-2">
     <mat-label>{{"phone number" | titlecase}}</mat-label>
-    <input matInput type="number" placeholder="phone number" [(ngModel)]="data['phonenumber']" name="phonenumber" required>
-    <mat-error>{{userdetailsform.form.controls['phonenumber'] && userdetailsform.form.controls['phonenumber'].value.length<=10
-      ?userdetailsform.form.controls['phonenumber'].value.length==10 ? "" :"phonw number should be 10 digit long" :"should not be empty"}}</mat-error>
+    <input matInput type="number" placeholder="phone number" [(ngModel)]="data['phonenumber']" name="phonenumber" required appPhoneNumberChecker>
+    <mat-error>Phone number should be 10 digit long</mat-error>
   </mat-form-field>
   <mat-form-field appearance="legacy" class="tilewidth">
     <mat-label>Date of Birth</mat-label>
@@ -48,6 +47,6 @@
     <mat-error>needed a valid country string like india is represented as in</mat-error>
   </mat-form-field>
   <div class="py-sm-2">
-  <button class="btn btn-primary" formenctype="multipart/form-data" type="submit" [disabled]="!userdetailsform.form.dirty">Update</button>
+  <button class="btn btn-primary" formenctype="multipart/form-data" type="submit" [disabled]="userdetailsform.form.invalid ||userdetailsform.form.untouched">Update</button>
   </div>
 </form>

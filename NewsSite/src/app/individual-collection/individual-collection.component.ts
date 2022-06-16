@@ -16,9 +16,7 @@ export class IndividualCollectionComponent implements OnInit {
   homeCollection:string[] = [
     'top today','general','entertainment','business','sports','health','technology','science'
   ];
-  constructor(private activatedRoute: ActivatedRoute,
-              private fullview:DynamicFullviewService,
-              private component: DynamicComponentService) { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     console.log("new individual component");

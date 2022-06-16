@@ -30,6 +30,23 @@ public class Users {
 	
 	private String gender;
 	private String nation;
+	
+	public Users() {
+		
+	}
+	
+	public Users(String username, String firstname, String lastname, String email, long phonenumber, Date dateofbirth,
+			String gender, String nation) {
+		super();
+		this.username = username;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.phonenumber = phonenumber;
+		this.dateofbirth = dateofbirth;
+		this.gender = gender;
+		this.nation = nation;
+	}
 	public String getUsername() {
 		return username;
 	}
