@@ -19,36 +19,35 @@ export class CardCollectionComponent implements
   OnDestroy{
   isFullScreen:boolean = false;
   page:number = 1;
-  data:CardData[] = [];
+  data!:CardData[];
   isLoading:boolean = false;
   @Input('heading') heading!:string;
-  isDataEnded:boolean = false;
-  favoritesList!:string[];
   @ViewChild(PlaceholderDirective, {static : true}) host!:PlaceholderDirective;
+  isDataEnded:boolean = false;
+  favoritesList:string[] = [];
   closeEvent: EventEmitter<void> | undefined;
   fullviewcardDataEmitter: EventEmitter<{header:string | null,
     content:string|null,url:string|null}> = new EventEmitter<{header: string | null; content: string | null; url: string | null}>();
   fullviewcloseEvent :EventEmitter<void> | undefined;
   constructor(private activedRoute: ActivatedRoute,
               private fetch: DatafetchService,
-              private component: DynamicComponentService,private fullview:DynamicFullviewService) { }
+              private component: DynamicComponentService,
+              private fullview: DynamicFullviewService) { }
 
   ngOnDestroy(): void {
     if(this.closeEvent != undefined)
         this.closeEvent.emit();
     if(this.fullviewcloseEvent != undefined)
       this.fullviewcloseEvent.emit();
-    }
+  }
 
   ngOnInit(): void {
-    this.fetch.getFavList().subscribe(data=>{
-      console.log(data);
-      // @ts-ignore
-      this.favoritesList = [...data];
-    });
     this.fullviewcardDataEmitter.subscribe(data=>{
       this.fullviewcloseEvent = this.fullview.create(this.host.viewContainerRef,data.header,data.content,data.url);
-    })
+    });
+    this.fetch.getFavList().subscribe(data =>{
+      this.favoritesList = [...data];
+    });
   }
 
   onSeeAllChange() {
@@ -62,10 +61,11 @@ export class CardCollectionComponent implements
     this.data = [];
     this.fetchData();
   }
+
   fetchData(){
     if(this.isDataEnded) {
       this.isLoading = false;
-      return;
+      return ;
     }
     this.fetch.fetchWithKey(this.heading,this.page).subscribe(data=>{
       console.log('data is getting');
@@ -87,6 +87,8 @@ export class CardCollectionComponent implements
       ()=>{
       this.page+=1;
       this.isLoading = !this.isLoading;
+      console.log(this.heading);
+      console.log(this.data);
     });
   }
 
@@ -95,10 +97,10 @@ export class CardCollectionComponent implements
     this.fetchData();
   }
 
-  isfav(i: any):boolean {
-    if(i==[])
+  isfav(i: CardData):boolean {
+    if(i==null || i.url==null)
       return false
-    return this.favoritesList.includes(i['url']);
+    return this.favoritesList.includes(i.url);
   }
 
 }

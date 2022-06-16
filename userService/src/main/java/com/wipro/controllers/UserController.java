@@ -96,13 +96,17 @@ public class UserController {
 		Users userByEmail = userService.getUserByEmail(newEmail);
 		
 		UserCredentialModel credByEmail = credService.getUserCredByEmail(oldCred.getEmail());
-		
-		userByUsername.setEmail(newEmail);
-		userService.saveUser(userByUsername);
-		
-		credService.deleteUserCred(credByEmail);
-		credByEmail.setEmail(newEmail);
-		credService.saveUserCred(credByEmail);
+		try {
+			userByUsername.setEmail(newEmail);
+			userService.saveUser(userByUsername);
+			
+			credService.deleteUserCred(credByEmail);
+			credByEmail.setEmail(newEmail);
+			credService.saveUserCred(credByEmail);
+		}
+		catch(Exception e){
+			throw new IllegalArgumentException("New Email Id is already taken by other user");
+		}
 		
 		return ResponseEntity.accepted().body(new ResponseService("Email updated"));
 	}

@@ -65,10 +65,14 @@ export class RequestService {
   }
 
   getNation():string | null{
+    if(this.nation==undefined)
+      this.getUsernameAndTokenAndEmail()
     return this.nation;
   }
 
   getUsername():string|null{
+    if(this.username==undefined)
+      this.getUsernameAndTokenAndEmail();
     return this.username
   }
   getToken():string|null{

@@ -5,7 +5,68 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2022-06-15T09:04:18Z</updated>
+  <updated>2022-06-16T07:00:00Z</updated>
+  <entry>
+    <title>Bootiful Podcast: Spring Framework contributor Sébastien Deleuze on GraalVM, AOT, project Leyden, and WebAssembly</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/06/16/bootiful-podcast-spring-framework-contributor-s-bastien-deleuze-on-graalvm-aot-project-leyden-and-webassembly" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2022-06-16:4831</id>
+    <updated>2022-06-16T07:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment, &lt;a href="https://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Spring Framework contributor &lt;a href="https://twitter.com/sdeleuze"&gt;Sébastien Deleuze (@sdeleuze)&lt;/a&gt; on GraalVM, AOT, project Leyden, and WebAssembly.&lt;/p&gt;
+&lt;iframe title="Spring Framework contributor Sébastien Deleuze on GraalVM, AOT, project Leyden, and WebAssembly" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=9snuh-125088e-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;logo_link=episode_page&amp;btn-skin=7"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>CVE report published for Spring Cloud Function</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/06/15/cve-report-published-for-spring-cloud-function" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Oleg Zhurakousky</name>
+    </author>
+    <id>tag:spring.io,2022-06-15:4828</id>
+    <updated>2022-06-16T00:08:00Z</updated>
+    <content type="html">&lt;p&gt;We have released Spring Cloud Function &lt;a href="https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-function-context/3.2.6/"&gt;3.2.6&lt;/a&gt; to address the following CVE report.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://tanzu.vmware.com/security/cve-2022-22979"&gt;CVE-2202-22979: Spring Cloud Function Dos Vulnerability &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please review the information in the CVE report and upgrade immediately.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tools 4.15.0 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/06/15/spring-tools-4-15-0-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Martin Lippert</name>
+    </author>
+    <id>tag:spring.io,2022-06-15:4829</id>
+    <updated>2022-06-15T18:00:00Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;p&gt;I am happy to announce the 4.15.0 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Theia.&lt;/p&gt;&lt;h4&gt;&lt;a href="#major-changes-to-the-spring-tools-4-for-eclipse-distribution" class="anchor" name="major-changes-to-the-spring-tools-4-for-eclipse-distribution"&gt;&lt;/a&gt;major changes to the Spring Tools 4 for Eclipse distribution&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;updated to Eclipse 2022-06 release (&lt;a href="https://www.eclipse.org/eclipseide/2022-06/"&gt;new and noteworthy&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;h4&gt;&lt;a href="#fixes-and-improvements" class="anchor" name="fixes-and-improvements"&gt;&lt;/a&gt;fixes and improvements&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; fixed: vscode-sts: an edge case of workspace symbol for @PutMapping (&lt;a href="https://github.com/spring-projects/sts4/issues/781"&gt;#781&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(VSCode)&lt;/em&gt; fixed: Failed to refresh live data from process 12704 - com.xxxx.xx.xxx.BillingServiceApp after retries: 10 (&lt;a href="https://github.com/spring-projects/sts4/issues/748"&gt;#748&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: The Spring Boot Language Server is not immediately shutdown after closing the last open editor to avoid the need to restart the server when you open the next file (related to &lt;a href="https://github.com/spring-projects/sts4/issues/568"&gt;#568&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: When opening symbols, open the compilation unit from the relevant project (&lt;a href="https://github.com/spring-projects/sts4/issues/769"&gt;#769&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: The issue with the internal web browser not being able to open HTTP URLs on macOS got fixed. If you prefer to use the internal browser instead of an external one, you can make that switch in the preferences.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Concourse)&lt;/em&gt; fixed: Update Concourse registry-image schema (&lt;a href="https://github.com/spring-projects/sts4/issues/777"&gt;#777&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Concourse)&lt;/em&gt; fixed: Add registry_mirror &amp;amp; across as a known properties (&lt;a href="https://github.com/spring-projects/sts4/issues/752"&gt;#752&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Theia, please go visit:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Tools 4: &lt;a href="https://spring.io/tools/"&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2022-06-15-4150-release-incl-language-servers-version-1340"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2022-06-15-4150-release-incl-language-servers-version-1340&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Spring Tools 4.15.1 is scheduled to be released in early August 2022.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Framework 5.3.21 available now</title>
     <link rel="alternate" href="https://spring.io/blog/2022/06/15/spring-framework-5-3-21-available-now" />
@@ -577,217 +638,6 @@ dependencyManagement {&#xD;
   }&#xD;
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: the good Dr. David Syer on the new and novel in Spring and Kubernetes</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/05/26/a-bootiful-podcast-the-good-dr-david-syer-on-the-new-and-novel-in-spring-and-kubernetes" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2022-05-27:4810</id>
-    <updated>2022-05-26T15:00:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment, Josh Long talks to Spring Boot and Spring Cloud luminary, the good Dr. @David_Syer, about the latest and greatest on Spring and Kubernetes &lt;/p&gt;
-&lt;iframe title="The good Dr. David Syer on the new and novel in Spring and Kubernetes " allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=87fyr-1236e3b-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;logo_link=episode_page&amp;btn-skin=7"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Authorization Server 0.3.0 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/05/25/spring-authorization-server-0-3-0-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Steve Riesenberg</name>
-    </author>
-    <id>tag:spring.io,2022-05-25:4809</id>
-    <updated>2022-05-25T16:00:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the team and everyone who has contributed, it is my pleasure to announce the general availability of Spring Authorization Server 0.3.0.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can download it from Maven Central by using the module coordinates:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;implementation 'org.springframework.security:spring-security-oauth2-authorization-server:0.3.0'&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See the &lt;a href="https://github.com/spring-projects/spring-authorization-server/releases/tag/0.3.0"&gt;release notes&lt;/a&gt; for complete details.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With this release, you can view the initial version of the &lt;a href="https://docs.spring.io/spring-authorization-server/docs/current/reference/html/index.html"&gt;reference documentation&lt;/a&gt; and the new &lt;a href="https://spring.io/projects/spring-authorization-server"&gt;project page on spring.io&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To get started using Spring Authorization Server, see the &lt;a href="https://docs.spring.io/spring-authorization-server/docs/current/reference/html/getting-started.html"&gt;Getting Started&lt;/a&gt; chapter of the reference documentation and the &lt;a href="https://github.com/spring-projects/spring-authorization-server/tree/main/samples"&gt;samples&lt;/a&gt; to become familiar with setup and configuration.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We would love to gather your feedback as we strive to improve and build upon this release.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-authorization-server"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-authorization-server/issues"&gt;GitHub Issues&lt;/a&gt; | &lt;a href="https://app.zenhub.com/workspaces/authorization-server-5e8f3182b5e8f5841bfc4902/board?repos=248032165"&gt;ZenHub Board&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Preparing for Spring Boot 3.0</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/05/24/preparing-for-spring-boot-3-0" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Phil Webb</name>
-    </author>
-    <id>tag:spring.io,2022-05-19:4805</id>
-    <updated>2022-05-24T16:00:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Boot 2.0 was the first release in the 2.x line and was published on Feburary 28th 2018.
-We&amp;#8217;ve just released Spring Boot 2.7 which means that, so far, we&amp;#8217;ve been maintaining the 2.x line for just over 4 years.
-In total we&amp;#8217;ve published 95 distinct releases over that timeframe!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The entire Spring team, and many in our community of contributors, are now preparing for the next generation of Spring.
-We are planning to release Spring Boot 3.0 in November 2022.
-This next major revision will be based on Spring Framework 6.0 and will require Java 17 or above.
-It will also be the first version of Spring Boot that makes use of Jakarta EE 9 APIs (&lt;code&gt;jakarta.*&lt;/code&gt;)  instead of EE 8 (&lt;code&gt;javax.*&lt;/code&gt;).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The next six months offer an ideal opportunity to prepare your own projects for this major release.
-In this blog post we&amp;#8217;ll cover some of the things that you can do &lt;em&gt;today&lt;/em&gt; to make any future migration as painless as possible.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="upgrade-to-java-17"&gt;&lt;a class="anchor" href="#upgrade-to-java-17"&gt;&lt;/a&gt;Upgrade to Java 17&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Boot 3.0 will require Java 17, but you don&amp;#8217;t need to wait until that release to upgrade to the latest LTS Java version.
-Any recent Spring Boot 2.x release will work really well with Java 17.
-You can also make use of Java 17 features (such as records) in your own codebases.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We highly recommend that you upgrade your JDK today if at all possible.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="upgrade-to-the-latest-spring-boot-2-7-x"&gt;&lt;a class="anchor" href="#upgrade-to-the-latest-spring-boot-2-7-x"&gt;&lt;/a&gt;Upgrade to the Latest Spring Boot 2.7.x&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If you&amp;#8217;re currently using an older version of Spring Boot 2.x, we highly recommend that you upgrade to Spring Boot 2.7.
-When Spring Boot 3.0 is released we will be providing a migration guide, but it will assume that you&amp;#8217;re migrating from Spring Boot 2.7 and not an earlier version.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Upgrading instructions are always provided in our release notes.
-For example, if you are upgrading from Spring Boot 2.6 to Spring Boot 2.7, you can follow &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.7-Release-Notes#upgrading-from-spring-boot-26"&gt;this section&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If you&amp;#8217;re upgrading from Spring Boot 2.5 or earlier, we don&amp;#8217;t recommend skipping releases.
-It&amp;#8217;s often easier to upgrade in steps (e.g. 2.5 &amp;#8594; 2.6 &amp;#8594; 2.7) rather than trying to upgrade directly from 2.5 &amp;#8594; 2.7.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="check-for-calls-to-deprecated-code"&gt;&lt;a class="anchor" href="#check-for-calls-to-deprecated-code"&gt;&lt;/a&gt;Check for Calls to Deprecated Code&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;As Spring Boot evolves we will often deprecate methods or classes and provide replacements.
-We typically provide a 12 month overlap, after which deprecated code is removed.
-You can find details &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Deprecations"&gt;of this policy on our wiki&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Boot 3.0 will remove all deprecated code, so we recommend that you check your existing code is not relying on any deprecated methods.
-It&amp;#8217;s worth considering using the &lt;code&gt;-Werror&lt;/code&gt; Java compiler option to fail your build if deprecation warnings are reported.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="migrate-from-legacy-application-properties-and-application-yaml-processing"&gt;&lt;a class="anchor" href="#migrate-from-legacy-application-properties-and-application-yaml-processing"&gt;&lt;/a&gt;Migrate from Legacy application.properties and application.yaml Processing&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Boot 2.4 changed the way that &lt;code&gt;application.properties&lt;/code&gt; and &lt;code&gt;application.yaml&lt;/code&gt; files were loaded.
-Most users didn&amp;#8217;t notice the change, but a few projects may have set the &lt;code&gt;spring.config.use-legacy-processing&lt;/code&gt; property to &lt;code&gt;true&lt;/code&gt; to restore the old behavior.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The legacy processing support will not be coming to Spring Boot 3.0 so you should check that your project doesn&amp;#8217;t set &lt;code&gt;spring.config.use-legacy-processing&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="use-spring-mvcs-pathpatternparser"&gt;&lt;a class="anchor" href="#use-spring-mvcs-pathpatternparser"&gt;&lt;/a&gt;Use Spring MVC&amp;#8217;s PathPatternParser&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring MVC offers two ways to parse patterns.
-As of Spring Boot 2.6, the &lt;code&gt;PathPatternParser&lt;/code&gt; is used by default.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Some applications may have manually switched back to the &lt;code&gt;AntPathMatcher&lt;/code&gt; implementation by setting the &lt;code&gt;spring.mvc.pathmatch.matching-strategy&lt;/code&gt; property.
-Although this will continue to work in Spring Boot 3.0, we recommend using the &lt;code&gt;PathPatternParser&lt;/code&gt; if at all possible since it provides better performance.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="check-if-third-party-projects-have-jakarta-ee-9-compatible-releases"&gt;&lt;a class="anchor" href="#check-if-third-party-projects-have-jakarta-ee-9-compatible-releases"&gt;&lt;/a&gt;Check if Third-party Projects Have Jakarta EE 9 Compatible Releases&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Jakarta EE 9 a new top-level &lt;code&gt;jakarta&lt;/code&gt; package, replacing EE 8&amp;#8217;s &lt;code&gt;javax&lt;/code&gt; top-level package.
-For example, the Servlet specification in Jakarta EE 8 uses a &lt;code&gt;javax.servlet&lt;/code&gt; package but this has changed to &lt;code&gt;jakarta.servlet&lt;/code&gt; in EE 9.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Generally speaking, it&amp;#8217;s not possible to mix Java EE and Jakarta EE APIs in the same project.
-You need to ensure that your own code, as well as all third-party libraries are using &lt;code&gt;jakarta.*&lt;/code&gt; package imports.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The good news is that most well-maintained libraries are producing Jakarta EE 9 compatible variants.
-For example Hibernate, Thymeleaf, Tomcat, Jetty and Undertow have all done so already.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We recommend that you take some time to check that any third-party libraries that you use that integrate with Jakarta EE and check that they have EE 9 compatible variants.
-The most common problems we&amp;#8217;ve found are with projects that import Servlet APIs.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="check-if-third-party-projects-have-updated-spring-compatible-releases"&gt;&lt;a class="anchor" href="#check-if-third-party-projects-have-updated-spring-compatible-releases"&gt;&lt;/a&gt;Check if Third-party Projects have Updated Spring Compatible Releases&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Framework 6.0 will not be binary compatible with the previous generation.
-If you are making use of third-party jars that offer Spring integration, you should check that they are planning Spring Framework 6 compatible releases.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="try-the-spring-boot-milestones"&gt;&lt;a class="anchor" href="#try-the-spring-boot-milestones"&gt;&lt;/a&gt;Try the Spring Boot Milestones&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Although we don&amp;#8217;t recommend it for production, you can try Spring Boot 3.0 milestones today to see how hard it will be to migrate your project.
-Trying the milestones on a branch of your code is a great way to preempt any potential problems.
-They are available from &lt;a href="https://repo.spring.io/milestone" class="bare"&gt;https://repo.spring.io/milestone&lt;/a&gt;.
-Creating a project on &lt;a href="https://start.spring.io" class="bare"&gt;https://start.spring.io&lt;/a&gt; and selecting the latest 3.0 milestone will include the necessary repositories in the build configuration.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We&amp;#8217;re always interested in feedback and we&amp;#8217;re very happy when bugs get identified before we release the GA version.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can raise issues at &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;github.com/spring-projects/spring-boot/issues&lt;/a&gt; (make sure you tell us the version of Spring Boot that you&amp;#8217;re using).&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="consider-commercial-support"&gt;&lt;a class="anchor" href="#consider-commercial-support"&gt;&lt;/a&gt;Consider Commercial Support&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Boot 2.7 is the last planned release in the 2.x line.
-We&amp;#8217;ve extended our open source support for this release by an additional 6 months until November 2023.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In addition, commercial support for Spring Boot 2.7 has also been extended and is available until February 2025.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can find project support details at &lt;a href="https://spring.io/projects/spring-boot#support"&gt;spring.io/projects/spring-boot&lt;/a&gt;.
-Details of commercial support can be found at &lt;a href="https://tanzu.vmware.com/spring-runtime"&gt;tanzu.vmware.com/spring-runtime&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Any release triggered by a commercial support request will always be published as open source so commercial customers also help the open source community.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

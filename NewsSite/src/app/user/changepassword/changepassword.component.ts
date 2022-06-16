@@ -33,7 +33,6 @@ OnDestroy{
     },
       error => {
         this.closeSub = this.alert.create(this.host.viewContainerRef,error.error.message,AlertModel.danger);
-
       });
 
   }
